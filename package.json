@@ -9,8 +9,11 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
+    "flow": "flow",
     "test": "jest",
-    "build": "babel src --out-dir lib"
+    "clean": "rimraf lib",
+    "prebuild": "npm run lint && npm run flow && npm test && npm run clean",
+    "build": "babel src --out-dir lib --ignore __tests__"
   },
   "pre-commit": [
     "lint",
@@ -19,12 +22,16 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.5.2",
     "babel-preset-flow": "^6.23.0",
     "eslint": "~3.19.0",
     "eslint-config-google": "~0.8.0",
     "eslint-config-keystone": "~3.0.0",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "flow-bin": "^0.47.0",
     "jest": "^20.0.4",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.6.1"
   }
 }

@@ -1,11 +1,10 @@
 /**
+ * @flow
  * Created by xuyuanxiang on 2017/6/7.
  */
 const crypto = require('crypto');
 
-const isString = function(input) {
-  return typeof input === 'string';
-};
+const isString: (input: any) => boolean = (input) => typeof input === 'string';
 /**
  * 计算签名：
  * sha1(sort(token、timestamp、nonce、msg_encrypt))
@@ -15,13 +14,15 @@ const isString = function(input) {
  * @param {String} msgEncrypt - 加密后的消息体
  * @return {String}
  */
-module.exports = function(token, timestamp, nonce, msgEncrypt) {
+module.exports = function(
+  token: string, timestamp: string | number, nonce?: string,
+  msgEncrypt: string) {
   if (!isString(token) || !isString(timestamp) || !isString(nonce)
-      || !isString(msgEncrypt)) {
+    || !isString(msgEncrypt)) {
     return null;
   }
   // sort的含义: 将参数值按照字母生序排列，拼接为一个字符串。
-  const params = [
+  const params: string = [
     token,
     timestamp,
     nonce,

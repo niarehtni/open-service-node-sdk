@@ -428,3 +428,7 @@ jspm_packages/
 .env
 
 lib
+
+flow-typed/npm
+
+.idea

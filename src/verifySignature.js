@@ -1,8 +1,14 @@
 /**
+ * @flow
  * Created by xuyuanxiang on 2017/6/8.
  */
-const querystring = require('querystring');
 const sign = require('../lib/sign');
+
+type QueryParams = {
+  signature: string,
+  timestamp: number | string,
+  nonce?: string
+}
 
 /**
  * 签名校验
@@ -11,21 +17,18 @@ const sign = require('../lib/sign');
  * @param {String} token - 应用开发商注册时自定义的Token
  * @return {boolean}
  */
-module.exports = function(query, body, token) {
+module.exports = function(
+  query: QueryParams,
+  body: { encrypt: string },
+  token: string): boolean {
   if (!query || !body
-      || typeof token !== 'string'
-      || typeof body.encrypt !== 'string') {
+    || typeof token !== 'string'
+    || typeof body.encrypt !== 'string') {
     return false;
   }
-  let params;
-  if (typeof query === 'string') {
-    params = querystring.parse(query);
-  } else if (typeof query === 'object') {
-    params = Object.assign({}, query);
-  }
-  const { signature, timestamp, nonce } = params;
-  if (!timestamp || !nonce) {
+  const { signature, timestamp, nonce } = query;
+  if (typeof timestamp === 'undefined' || typeof signature === 'undefined') {
     return false;
   }
-  return sign(token, timestamp, nonce, body.encrypt) === signature;
+  return sign(token, timestamp, nonce || '', body.encrypt) === signature;
 };

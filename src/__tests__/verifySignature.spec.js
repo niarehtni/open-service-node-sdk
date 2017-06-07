@@ -15,7 +15,6 @@ describe('lib/verifySignature.js', () => {
   };
 
   it('should verify signature', () => {
-    expect(verifySignature(query, body, TOKEN)).toBeTruthy();
     expect(verifySignature(querystring.parse(query), body, TOKEN)).toBeTruthy();
   });
 });
