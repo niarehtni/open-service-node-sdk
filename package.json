@@ -1,20 +1,26 @@
 {
-  "name": "open-service-node-sdk",
+  "name": "dingtalk-node-sdk",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "xuyuanxiang <chaos@xuyuanxiang.me> (http://xuyuanxiang.me)",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "build": "babel src --out-dir lib"
   },
   "pre-commit": [
     "lint",
     "test"
   ],
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-flow": "^6.23.0",
     "eslint": "~3.19.0",
     "eslint-config-google": "~0.8.0",
     "eslint-config-keystone": "~3.0.0",

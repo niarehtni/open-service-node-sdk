@@ -2,7 +2,7 @@
  * Created by xuyuanxiang on 2017/6/8.
  */
 const querystring = require('querystring');
-const sign = require('./sign');
+const sign = require('../lib/sign');
 
 /**
  * 签名校验
