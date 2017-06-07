@@ -1,4 +1,8 @@
 /**
+ * @typedef {Object} QueryParams
+ * @property {String} signature - 回调接口生成的签名
+ * @property {Number|String} timestamp - 回调接口传回的时间戳
+ * @property {String} - 回调接口传回的随机字符串
  * @flow
  * Created by xuyuanxiang on 2017/6/8.
  */
@@ -11,13 +15,13 @@ type QueryParams = {
 }
 
 /**
- * 签名校验
- * @param {String|Object} query - 回调URL所携带的query参数
+ * 计算签名校验，并将计算结果和回调接口所传签名进行比对。
+ * @param {QueryParams} query - 回调URL所携带的query参数
  * @param {Object} body - 回调URL Post参数
  * @param {String} token - 应用开发商注册时自定义的Token
  * @return {boolean}
  */
-module.exports = function(
+module.exports = function verifySignature(
   query: QueryParams,
   body: { encrypt: string },
   token: string): boolean {

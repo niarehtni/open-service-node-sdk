@@ -1,6 +1,6 @@
 /**
  * @flow
- * Created by xuyuanxiang on 2017/6/7.
+ * Created by xuyuanxiang on 2017/6/8.
  */
 const source: Buffer = new Buffer(62);
 const zero: number = new Buffer('0')[0]; // ASCII 0
@@ -20,6 +20,7 @@ for (let i = 0; i < 26; i++) {
 
 /**
  * 获取指定范围内的随机数
+ * @private
  * @param {Number} min - 最小值
  * @param {Number} max - 最大值
  * @return {Number}
@@ -31,9 +32,13 @@ function random(min: number, max: number): number {
 /**
  * 随机生成数据加密密钥
  * 从[0-9]、[A-Z]、[a-z]中随机提取，组成长度为{43}位的字符串。
+ * @example
+ * var randomEncodingAESKey = require('dingtalk-node-sdk/randomEncodingAESKey');
+ *
+ * var encodingAESKey = randomEncodingAESKey();
  * @return {String}
  */
-module.exports = function(): string {
+module.exports = function randomEncodingAESKey(): string {
   const buff = new Buffer(43);
   let offset = 0;
   while (offset < 43) {

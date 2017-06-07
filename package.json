@@ -4,19 +4,23 @@
   "main": "index.js",
   "author": "xuyuanxiang <chaos@xuyuanxiang.me> (http://xuyuanxiang.me)",
   "engines": {
-    "node": ">=6"
+    "node": ">=4"
   },
   "license": "MIT",
+  "man": "lib",
   "scripts": {
     "lint": "eslint .",
     "flow": "flow",
     "test": "jest",
     "clean": "rimraf lib",
     "prebuild": "npm run lint && npm run flow && npm test && npm run clean",
-    "build": "babel src --out-dir lib --ignore __tests__"
+    "build": "babel src --out-dir lib --ignore __tests__",
+    "presite": "npm run build && rimraf docs",
+    "site": "jsdoc lib -d docs"
   },
   "pre-commit": [
     "lint",
+    "flow",
     "test"
   ],
   "devDependencies": {
@@ -31,6 +35,7 @@
     "eslint-plugin-flowtype": "^2.34.0",
     "flow-bin": "^0.47.0",
     "jest": "^20.0.4",
+    "jsdoc": "^3.4.3",
     "pre-commit": "^1.2.2",
     "rimraf": "^2.6.1"
   }
