@@ -1,6 +1,6 @@
 /**
  * @flow
- * Created by xuyuanxiang on 2017/6/8.
+ * @author Created by xuyuanxiang on 2017/6/8.
  */
 const crypto = require('crypto');
 const pkcs7 = require('pkcs7');
@@ -14,7 +14,7 @@ const randomEncodingAESKey = require('./randomEncodingAESKey');
  * @param {String} clearData - 消息明文
  * @return {String}
  */
-module.exports = function(
+module.exports = function encrypt(
   encodingAESKey: string,
   appId: string,
   clearData: string): string {
@@ -36,11 +36,11 @@ module.exports = function(
   // 应用开发商创建应用获取的appId
   const after = new Buffer(appId);
   msgLen.writeInt32BE(msg.byteLength, 0);
-  // encrypt = random(16B) + msg_len(4B) + msg + appId
-  const encrypt = Buffer.concat([before, msgLen, msg, after]);
+  // source = random(16B) + msg_len(4B) + msg + appId
+  const source = Buffer.concat([before, msgLen, msg, after]);
 
   // 数据采用PKCS#7填充后进行加密
-  let piece1 = encipher.update(pkcs7.pad(encrypt));
+  let piece1 = encipher.update(pkcs7.pad(source));
   let piece2 = encipher.final();
   // 对明文消息msg加密处理后的Base64编码
   return Buffer.concat([piece1, piece2]).toString('base64');

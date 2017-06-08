@@ -13,6 +13,9 @@ export function sign(...rests: Array<string>): string;
 export function randomEncodingAESKey(): string;
 
 export interface AES {
-  encrypt: Function,
-  decrypt: Function,
+  encrypt: (encodingAESKey: string,
+            appId: string,
+            clearData: string) => string,
+  decrypt: (encodingAESKey: string, appId: string,
+            encrypt: string) => { before: string, content?: any, after: string },
 }
