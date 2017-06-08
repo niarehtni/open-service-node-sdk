@@ -8,7 +8,7 @@ const crypto = require('crypto');
  * 计算签名：
  * sha1(sort(arg1, arg2, arg3...))
  * @example
- * var sign = require('dingtalk-node-sdk/sign');
+ * var sign = require('open-service-node-sdk/sign');
  *
  * var token = '123456';
  * var timestamp = new Date().getTime();

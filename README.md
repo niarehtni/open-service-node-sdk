@@ -1,23 +1,19 @@
-# DingTalk JS SDK [![NPM version](http://img.shields.io/npm/v/dingtalk-node-sdk.svg?style=flat)](https://npmjs.org/package/dingtalk-node-sdk)
+# DingTalk JS SDK [![NPM version](http://img.shields.io/npm/v/open-service-node-sdk.svg?style=flat)](https://npmjs.org/package/open-service-node-sdk)
 
-[![NPM Downloads](https://img.shields.io/npm/dm/dingtalk-node-sdk.svg?style=flat)](https://npmjs.org/package/dingtalk-node-sdk)
-[![Node.js Version](https://img.shields.io/node/v/dingtalk-node-sdk.svg?style=flat)](http://nodejs.org/download/)
-[![Build Status](https://travis-ci.org/xuyuanxiang/dingtalk-node-sdk.svg?style=flat-square)](https://travis-ci.org/xuyuanxiang/dingtalk-node-sdk)
+[![NPM Downloads](https://img.shields.io/npm/dm/open-service-node-sdk.svg?style=flat)](https://npmjs.org/package/open-service-node-sdk)
+[![Node.js Version](https://img.shields.io/node/v/open-service-node-sdk.svg?style=flat)](http://nodejs.org/download/)
+[![Build Status](https://travis-ci.org/xuyuanxiang/open-service-node-sdk.svg?style=flat-square)](https://travis-ci.org/xuyuanxiang/open-service-node-sdk)
 
-[Reference](https://open-doc.dingtalk.com/docs/doc.htm?spm=a219a.7629140.0.0.twKzzU&treeId=366&articleId=104945&docType=1#s12)
+[API Docs]()
 
 ## Installation
 
 ```bash
-npm install dingtalk-node-sdk --save
+npm install open-service-node-sdk --save
 ```
 
 or
 
 ```bash
-yarn add dingtalk-node-sdk
+yarn add open-service-node-sdk
 ```
-
-## Usage
-
-###

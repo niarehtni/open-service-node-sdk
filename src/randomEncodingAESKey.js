@@ -33,15 +33,17 @@ function random(min: number, max: number): number {
  * 随机生成数据加密密钥
  * 从[0-9]、[A-Z]、[a-z]中随机提取，组成长度为{43}位的字符串。
  * @example
- * var randomEncodingAESKey = require('dingtalk-node-sdk/randomEncodingAESKey');
+ * var randomEncodingAESKey =
+ *    require('open-service-node-sdk/randomEncodingAESKey');
  *
  * var encodingAESKey = randomEncodingAESKey();
+ * @param {Number} len - 随机字符串长度，缺省：43
  * @return {String}
  */
-module.exports = function randomEncodingAESKey(): string {
-  const buff = new Buffer(43);
+module.exports = function randomEncodingAESKey(len: number = 43): string {
+  const buff = new Buffer(len);
   let offset = 0;
-  while (offset < 43) {
+  while (offset < len) {
     buff[offset++] = source[random(0, 62)];
   }
   return buff.toString('ascii');

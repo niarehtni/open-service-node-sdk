@@ -1,5 +1,5 @@
 {
-  "name": "dingtalk-node-sdk",
+  "name": "open-service-node-sdk",
   "version": "1.0.0",
   "main": "index.js",
   "author": "xuyuanxiang <chaos@xuyuanxiang.me> (http://xuyuanxiang.me)",
@@ -38,5 +38,8 @@
     "jsdoc": "^3.4.3",
     "pre-commit": "^1.2.2",
     "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "pkcs7": "^1.0.2"
   }
 }

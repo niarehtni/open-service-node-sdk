@@ -1,5 +1,5 @@
 /**
- * @module dingtalk-node-sdk
+ * @module open-service-node-sdk
  */
 
 // 校验签名参数
