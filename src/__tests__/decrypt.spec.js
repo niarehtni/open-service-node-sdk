@@ -12,9 +12,10 @@ describe('lib/decrypt.js', () => {
   it('should be ok', () => {
     const encodingAESKey = 'KLN4DMkqdDKnUvLQ501oitOHsrZy6VRXadgdNcu3jgd';
     const appId = 'e490e912-4c09-11e7-b114-b2f933d5fe66';
-    expect(decrypt(encodingAESKey, appId, body.encrypt)).toEqual({
+    const decoded = decrypt(encodingAESKey, appId, body.encrypt);
+    expect(decoded).toEqual({
       before: 'nO3FK7ahlgrn6sSQ',
-      msg: { text: 'hello world' },
+      content: { text: 'hello world' },
       after: 'e490e912-4c09-11e7-b114-b2f933d5fe66',
     });
   });
