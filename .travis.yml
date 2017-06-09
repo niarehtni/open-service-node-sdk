@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+- node
+branches:
+  only:
+  - "/^\\d{1}\\.\\d{1,2}.\\d{1,2}$/"
+notifications:
+  email:
+    recipients:
+    - chaos@xuyuanxiang.cn
+    on_success: never
+    on_failure: always
+script:
+  - yarn site
+  - yarn coverage
+deploy:
+  provider: npm
+  email: chaos@xuyuanxiang.cn
+  api_key:
+    secure: B4V6q/sYmG3l5kQgKKwjNRrS6j8xsY30nzkGG6KdwGptictE+eD+GYd/Io5fcNtJvMs2rSPW8PwzHuXFj+85XqLSMoMGlAQ1HyVpGwo/fxJW7NhsJozCPwmQmoysW8HNzghvpkDCb/UGe9Do1zWTae0rGnlabLNdrzWJqkzzfIInRIvcOJ41uaIPcc0ooAZzWQCWw5sxehEr8QerAHm7kJcmz4xOM7I8jlUYtKx075ERKgSMicBIKv0XC+JKOkCdgxAWBolfBFaewBh/A0aHW5KbP2Uv9gXqn74Hdfa7CEJpDlEJxI/8sA1XrB2BtbIYRUgaG8AlnI7INvspRpXffDJ9yq2DLT1aIQoN1eoQF7b4x6EiaEIjhmOpswtDShGn69ciZJZFAMQqoixHmvghHicnM52K91Lxm0EokoKXK80jg5xdQB6J8kOaVE9rQ+x/cClFTq/bmKtEiUExsmmmM/d5kgwrL5Uy6nirE59D9QOr/9vXsP6WelgdUqbKVv6x19vziHgaKK6i0Lqc3bFn/APW3yRUsWPCNhh2/ES4TaXRxzbYG1MqvYjEUvCUepBE1DDl/PEbd0v9vy2YUPJsJNN4gHscsXn3hofMn9FlB6vcQJ+IMP2FjOTh8YDiF143tl4NTnelJMlq1dwI+Q4LcTgPp0zhSkJEmw4cFxBNpR8=
+  on:
+    tags: true
+    repo: xuyuanxiang/open-service-node-sdk
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+
