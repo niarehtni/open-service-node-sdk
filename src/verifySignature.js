@@ -1,5 +1,5 @@
 // @flow
-const sign = require('../lib/sign');
+const sign = require('./sign');
 
 /**
  * @typedef {Object} QueryParams
@@ -9,7 +9,7 @@ const sign = require('../lib/sign');
  */
 type QueryParams = {
   signature: string,
-  timestamp: number | string,
+  timestamp?: number | string,
   nonce?: string
 }
 
@@ -49,5 +49,5 @@ module.exports = function verifySignature(
   if (typeof timestamp === 'undefined' || typeof signature === 'undefined') {
     return false;
   }
-  return sign(token, timestamp, nonce || '', body.encrypt) === signature;
+  return sign(token, timestamp + '', nonce || '', body.encrypt) === signature;
 };

@@ -11,14 +11,13 @@
   "scripts": {
     "lint": "eslint .",
     "flow": "flow",
-    "test": "jest",
-    "coverage": "jest --no-cache --coverage",
+    "test": "jest --no-cache --coverage",
+    "posttest": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "clean": "rimraf lib",
-    "prebuild": "yarn lint && yarn flow && npm test && yarn clean",
+    "prebuild": "yarn clean",
     "build": "babel src --out-dir lib --ignore __tests__",
-    "presite": "yarn build && rimraf docs",
-    "site": "jsdoc lib README.md -d docs -c ./conf.json",
-    "postsite": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "presite": "rimraf docs",
+    "site": "jsdoc lib README.md -d docs -c ./conf.json"
   },
   "pre-commit": [
     "lint",
@@ -26,23 +25,23 @@
     "test"
   ],
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-eslint": "^7.2.3",
-    "babel-preset-env": "^1.5.2",
-    "babel-preset-flow": "^6.23.0",
-    "coveralls": "^2.13.1",
+    "babel-cli": "~6.24.1",
+    "babel-core": "~6.24.1",
+    "babel-eslint": "~7.2.3",
+    "babel-preset-env": "~1.5.2",
+    "babel-preset-flow": "~6.23.0",
+    "coveralls": "~2.13.1",
     "eslint": "~3.19.0",
     "eslint-config-google": "~0.8.0",
     "eslint-config-keystone": "~3.0.0",
-    "eslint-plugin-flowtype": "^2.34.0",
-    "flow-bin": "^0.47.0",
-    "jest": "^20.0.4",
-    "jsdoc": "^3.4.3",
+    "eslint-plugin-flowtype": "~2.34.0",
+    "flow-bin": "~0.47.0",
+    "jest": "~20.0.4",
+    "jsdoc": "~3.4.3",
     "pre-commit": "^1.2.2",
-    "rimraf": "^2.6.1"
+    "rimraf": "~2.6.1"
   },
   "dependencies": {
-    "pkcs7": "^1.0.2"
+    "pkcs7": "~1.0.2"
   }
 }
