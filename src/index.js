@@ -1,5 +1,14 @@
 /**
  * @module open-service-node-sdk
+ * @author xuyuanxiang <xuyuanxiang@wosai-inc.com> ({@link http://xuyuanxiang.me})
+ * @description
+ * 收钱吧开放平台node-sdk。
+ * @example
+ * const {verifySignature, sign, randomEncodingAESKey, AES} = require('open-service-node-sdk');
+ * const {encrypt, decrypt} = AES;
+ * @see {@link module:open-service-node-sdk/verifySignature} 签名校验
+ * @see {@link module:open-service-node-sdk/randomEncodingAESKey} 生成数据加密密钥
+ * @see {@link module:open-service-node-sdk/decrypt} 消息解密
  */
 
 // 校验签名参数

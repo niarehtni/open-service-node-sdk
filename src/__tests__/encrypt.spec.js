@@ -4,8 +4,8 @@
 const encrypt = require('../encrypt');
 const decrypt = require('../decrypt');
 
-describe('lib/encrypt.js', () => {
-  it('should be ok', () => {
+describe('open-service-node-sdk/encrypt.js', () => {
+  it('should work', () => {
     // 数据加密密钥
     const encodingAESKey = 'KLN4DMkqdDKnUvLQ501oitOHsrZy6VRXadgdNcu3jgd';
     // 应用开发商创建应用获取的appId
@@ -17,6 +17,7 @@ describe('lib/encrypt.js', () => {
     // 解密
     const decoded = decrypt(encodingAESKey, appId, encoded);
     const { before, content, after } = decoded;
+
     expect(/^[a-zA-Z0-9]{16}/.test(before)).toBeTruthy();
     expect(content).toEqual({ text: 'hello world' });
     expect(after).toBe(appId);

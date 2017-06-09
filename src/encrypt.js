@@ -1,18 +1,27 @@
-/**
- * @flow
- * @author Created by xuyuanxiang on 2017/6/8.
- */
+// @flow
 const crypto = require('crypto');
 const pkcs7 = require('pkcs7');
 const randomEncodingAESKey = require('./randomEncodingAESKey');
 
 /**
- * 消息加密
+ * @module open-service-node-sdk/encrypt
+ * @author xuyuanxiang <xuyuanxiang@wosai-inc.com> ({@link http://xuyuanxiang.me})
+ * @description 消息加密算法：
  * Base64_Encode(AES_Encrypt[random(16B) + msg_len(4B) + msg + $key])
+ * @example
+ * const encrypt = require('open-service-node-sdk/encrypt');
+ * // 数据加密密钥
+ * const encodingAESKey = 'KLN4DMkqdDKnUvLQ501oitOHsrZy6VRXadgdNcu3jgd';
+ * // 应用开发商创建应用获取的appId
+ * const appId = 'e490e912-4c09-11e7-b114-b2f933d5fe66';
+ * // 消息明文
+ * const payload = JSON.stringify({ text: 'hello world' });
+ * // 加密
+ * const encoded = encrypt(encodingAESKey, appId, payload);
  * @param {String} encodingAESKey - 数据加密密钥
  * @param {String} appId - 应用开发商创建应用获取的appId
  * @param {String} clearData - 消息明文
- * @return {String}
+ * @return {String} 密文
  */
 module.exports = function encrypt(
   encodingAESKey: string,
