@@ -27,5 +27,5 @@ deploy:
     github_token: $GITHUB_TOKEN
     local_dir: docs
     on:
-      branch: development
+      branch: develop
 
