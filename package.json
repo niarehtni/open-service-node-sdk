@@ -1,6 +1,6 @@
 {
   "name": "open-service-node-sdk",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "main": "index.js",
   "author": "xuyuanxiang <chaos@xuyuanxiang.me> (http://xuyuanxiang.me)",
   "engines": {
@@ -15,7 +15,7 @@
     "report": "jest --no-cache --coverage",
     "postreport": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "clean": "rimraf lib",
-    "prebuild": "yarn clean",
+    "prebuild": "npm run clean",
     "build": "babel src --out-dir lib --ignore __tests__",
     "presite": "rimraf docs",
     "site": "jsdoc lib README.md -d docs -c ./conf.json"
