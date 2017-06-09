@@ -27,5 +27,6 @@ deploy:
     github_token: $GITHUB_TOKEN
     local_dir: docs
     on:
-      branch: develop
+      repo: xuyuanxiang/open-service-node-sdk
+      branch: master
 
