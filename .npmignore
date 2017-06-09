@@ -99,3 +99,6 @@ yarn*
 src
 flow-typed
 .babelrc
+.coveralls.yml
+conf.json
+.travis.yml
