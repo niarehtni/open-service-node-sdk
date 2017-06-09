@@ -13,7 +13,6 @@ notifications:
 script:
   - yarn build
   - yarn report
-  - yarn site
 deploy:
   - provider: npm
     email: chaos@xuyuanxiang.cn
@@ -22,11 +21,3 @@ deploy:
     on:
       tags: true
       repo: xuyuanxiang/open-service-node-sdk
-  - provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN
-    local_dir: docs
-    on:
-      repo: xuyuanxiang/open-service-node-sdk
-      branch: master
-
