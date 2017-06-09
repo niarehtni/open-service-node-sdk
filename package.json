@@ -11,8 +11,9 @@
   "scripts": {
     "lint": "eslint .",
     "flow": "flow",
-    "test": "jest --no-cache --coverage",
-    "posttest": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "test": "jest",
+    "report": "jest --no-cache --coverage",
+    "postreport": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "clean": "rimraf lib",
     "prebuild": "yarn clean",
     "build": "babel src --out-dir lib --ignore __tests__",
