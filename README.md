@@ -4,6 +4,8 @@
 [![Node.js Version](https://img.shields.io/node/v/open-service-node-sdk.svg?style=flat)](http://nodejs.org/download/)
 [![Build Status](https://travis-ci.org/xuyuanxiang/open-service-node-sdk.svg?style=flat-square)](https://travis-ci.org/xuyuanxiang/open-service-node-sdk)
 
+[API文档](https://xuyuanxiang.github.io/open-service-node-sdk/module-open-service-node-sdk.html)
+
 ## 安装
 
 ```bash
