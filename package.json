@@ -1,13 +1,21 @@
 {
   "name": "open-service-node-sdk",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "main": "index.js",
   "author": "xuyuanxiang <chaos@xuyuanxiang.me> (http://xuyuanxiang.me)",
   "engines": {
     "node": ">=4"
   },
+  "main": "lib",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuyuanxiang/open-service-node-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xuyuanxiang/open-service-node-sdk/issues"
+  },
   "license": "MIT",
-  "man": "lib",
+  "homepage": "https://xuyuanxiang.github.io/open-service-node-sdk/index.html",
   "scripts": {
     "lint": "eslint .",
     "flow": "flow",
