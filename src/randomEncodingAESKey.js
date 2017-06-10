@@ -32,8 +32,16 @@ function random(min: number, max: number): number {
  * @description 数据加密密钥，
  * 生成规则：从`[0-9]`、`[A-Z]`、`[a-z]`中随机提取，组成长度为`{43}`位的字符串。
  * @example
- * var randomEncodingAESKey = require('open-service-node-sdk/lib/randomEncodingAESKey');
- * var encodingAESKey = randomEncodingAESKey();
+ * const randomEncodingAESKey = require('open-service-node-sdk/lib/randomEncodingAESKey');
+ * const assert = require('assert');
+ *
+ * // 数据加密密钥（43位）
+ * const encodingAESKey = randomEncodingAESKey();
+ * assert(/^[a-zA-Z0-9]{43}$/.test(encodingAESKey));
+ * console.log(encodingAESKey);
+ *
+ * // 自定义16位随机字符
+ * assert(/^[a-zA-Z0-9]{16}$/.test(randomEncodingAESKey(16)));
  * @param {Number} len - 所需生成随机字符串的长度，缺省：43位。
  * @return {String} 数据加密密钥
  */

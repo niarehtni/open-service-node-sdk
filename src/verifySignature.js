@@ -20,6 +20,7 @@ type QueryParams = {
  * 计算签名校验，并将计算结果和回调接口所传签名进行比对。
  * @example
  * const querystring = require('querystring');
+ * const assert = require('assert');
  * const verifySignature = require('open-service-node-sdk/lib/verifySignature');
  *
  * // 开发商注册时配置的Token
@@ -31,6 +32,7 @@ type QueryParams = {
  *    encrypt: '1a3NBxmCFwkCJvfoQ7WhJHB+iX3qHPsc9JbaDznE1i03peOk1LaOQoRz3+nlyGNhwmwJ3vDMG+OzrHMeiZI7gTRWVdUBmfxjZ8Ej23JVYa9VrYeJ5as7XM/ZpulX8NEQis44w53h1qAgnC3PRzM7Zc/D6Ibr0rgUathB6zRHP8PYrfgnNOS9PhSBdHlegK+AGGanfwjXuQ9+0pZcy0w9lQ=='
  * };
  * const result = verifySignature(query, body, TOKEN); // true
+ * assert(result, '校验失败！');
  * @param {QueryParams} query - 回调URL所携带的query参数
  * @param {{encrypt: String}} body - 回调URL Post参数
  * @param {String} token - 应用开发商注册时自定义的Token
