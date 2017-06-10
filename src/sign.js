@@ -19,12 +19,11 @@ const crypto = require('crypto');
  */
 module.exports = function sign(...rest: Array<string>): string {
   if (!Array.isArray(rest)
-    || rest.length === 0
-    || rest.some((it) => typeof it !== 'string')) {
+    || rest.length === 0) {
     return '';
   }
   // 将参数值按照字母生序排列，拼接为一个字符串。
-  const params: string = rest.sort().join('');
+  const params: string = rest.map((it) => String(it)).sort().join('');
 
   const sha = crypto.createHash('sha1');
   sha.update(params, 'utf8');
