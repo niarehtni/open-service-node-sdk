@@ -2,11 +2,11 @@
 const crypto = require('crypto');
 
 /**
- * @module open-service-node-sdk/sign
+ * @module open-service-node-sdk/lib/sign
  * @author xuyuanxiang <xuyuanxiang@wosai-inc.com> ({@link http://xuyuanxiang.me})
  * @description 计算签名：sha1(sort(arg1, arg2, arg3...))
  * @example
- * var sign = require('open-service-node-sdk/sign');
+ * var sign = require('open-service-node-sdk/lib/sign');
  *
  * var token = '123456';
  * var timestamp = new Date().getTime();

@@ -4,7 +4,7 @@
 const encrypt = require('../encrypt');
 const decrypt = require('../decrypt');
 
-describe('open-service-node-sdk/encrypt.js', () => {
+describe('lib/encrypt.js', () => {
   it('should work', () => {
     // 数据加密密钥
     const encodingAESKey = 'KLN4DMkqdDKnUvLQ501oitOHsrZy6VRXadgdNcu3jgd';

@@ -14,13 +14,13 @@ type QueryParams = {
 }
 
 /**
- * @module open-service-node-sdk/verifySignature
+ * @module open-service-node-sdk/lib/verifySignature
  * @author xuyuanxiang <xuyuanxiang@wosai-inc.com> ({@link http://xuyuanxiang.me})
  * @description
  * 计算签名校验，并将计算结果和回调接口所传签名进行比对。
  * @example
  * const querystring = require('querystring');
- * const verifySignature = require('open-service-node-sdk/verifySignature');
+ * const verifySignature = require('open-service-node-sdk/lib/verifySignature');
  *
  * // 开发商注册时配置的Token
  * const TOKEN = '123456';

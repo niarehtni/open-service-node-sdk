@@ -27,12 +27,12 @@ function random(min: number, max: number): number {
 }
 
 /**
- * @module open-service-node-sdk/randomEncodingAESKey
+ * @module open-service-node-sdk/lib/randomEncodingAESKey
  * @author xuyuanxiang <xuyuanxiang@wosai-inc.com> ({@link http://xuyuanxiang.me})
  * @description 数据加密密钥，
  * 生成规则：从`[0-9]`、`[A-Z]`、`[a-z]`中随机提取，组成长度为`{43}`位的字符串。
  * @example
- * var randomEncodingAESKey = require('open-service-node-sdk/randomEncodingAESKey');
+ * var randomEncodingAESKey = require('open-service-node-sdk/lib/randomEncodingAESKey');
  * var encodingAESKey = randomEncodingAESKey();
  * @param {Number} len - 所需生成随机字符串的长度，缺省：43位。
  * @return {String} 数据加密密钥

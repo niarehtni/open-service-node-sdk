@@ -1,12 +1,11 @@
 {
   "name": "open-service-node-sdk",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
   "author": "xuyuanxiang <chaos@xuyuanxiang.me> (http://xuyuanxiang.me)",
   "engines": {
     "node": ">=4"
   },
-  "main": "lib",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xuyuanxiang/open-service-node-sdk.git"

@@ -3,7 +3,7 @@ const crypto = require('crypto');
 const pkcs7 = require('pkcs7');
 
 /**
- * @module open-service-node-sdk/decrypt
+ * @module open-service-node-sdk/lib/decrypt
  * @author xuyuanxiang <xuyuanxiang@wosai-inc.com> ({@link http://xuyuanxiang.me})
  * @description 解密方案如下：
  * 1. 取出返回的JSON中的encrypt字段。
@@ -13,7 +13,7 @@ const pkcs7 = require('pkcs7');
  * 5. 去掉头部的16个随机字节，4个字节的消息长度和尾部的appId即为最终的消息体原文msg
  *
  * @example
- * const decrypt = require('open-service-node-sdk/decrypt');
+ * const decrypt = require('open-service-node-sdk/lib/decrypt');
  * // 回调Post参数
  * const body = {
  *    encrypt: 'ol5ZdzGiGK9yXYIuKB0wb5I4DTnZwkNcuo0b3OZgCUNqMRIdb9mfsmjVEe5vJT+pp7M5kyY8lfxFGnrT/qr0UER9v+skaX5GQ59AEtILoe4='

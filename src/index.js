@@ -6,9 +6,9 @@
  * @example
  * const {verifySignature, sign, randomEncodingAESKey, AES} = require('open-service-node-sdk');
  * const {encrypt, decrypt} = AES;
- * @see {@link module:open-service-node-sdk/verifySignature} 签名校验
- * @see {@link module:open-service-node-sdk/randomEncodingAESKey} 生成数据加密密钥
- * @see {@link module:open-service-node-sdk/decrypt} 消息解密
+ * @see {@link module:open-service-node-sdk/lib/verifySignature} 签名校验
+ * @see {@link module:open-service-node-sdk/lib/randomEncodingAESKey} 生成数据加密密钥
+ * @see {@link module:open-service-node-sdk/lib/decrypt} 消息解密
  */
 
 // 校验签名参数

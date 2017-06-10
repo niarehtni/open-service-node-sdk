@@ -4,12 +4,12 @@ const pkcs7 = require('pkcs7');
 const randomEncodingAESKey = require('./randomEncodingAESKey');
 
 /**
- * @module open-service-node-sdk/encrypt
+ * @module open-service-node-sdk/lib/encrypt
  * @author xuyuanxiang <xuyuanxiang@wosai-inc.com> ({@link http://xuyuanxiang.me})
  * @description 消息加密算法：
  * Base64_Encode(AES_Encrypt[random(16B) + msg_len(4B) + msg + $key])
  * @example
- * const encrypt = require('open-service-node-sdk/encrypt');
+ * const encrypt = require('open-service-node-sdk/lib/encrypt');
  * // 数据加密密钥
  * const encodingAESKey = 'KLN4DMkqdDKnUvLQ501oitOHsrZy6VRXadgdNcu3jgd';
  * // 应用开发商创建应用获取的appId
